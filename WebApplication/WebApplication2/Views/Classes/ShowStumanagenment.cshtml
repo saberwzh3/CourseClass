@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication2.BLL.Class.StuManagement>
+
+@{
+    ViewBag.Title = "查看班级课程安排";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("返回", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+        </tr>
+    }
+</table>
+

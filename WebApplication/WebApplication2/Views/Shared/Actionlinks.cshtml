@@ -1,0 +1,10 @@
+﻿@using WebApplication2.Models
+@{
+    var actionlink = (List<Actiolink>)ViewBag.Actiolink;
+}
+    <ul class="nav navbar-nav sidebar ">
+        @foreach (var actionlinks in actionlink)
+        {
+            <li>@Html.ActionLink(actionlinks.Name, actionlinks.Action, actionlinks.Controller, new { area = "" }, new { @class = "navbar-brand" })</li>
+        }
+    </ul>
